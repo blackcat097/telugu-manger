@@ -115,21 +115,21 @@ home_keyboard_pm = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                text="Commands ❓", callback_data="bot_commands"
+                text="ᴄᴏᴍᴍᴀɴᴅs", callback_data="bot_commands"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="System Stats 🖥",
+                text="sʏsᴛᴇᴍ sᴛᴀᴛs",
                 callback_data="stats_callback",
             ),
             InlineKeyboardButton(
-                text="Support 👨", url="http://t.me/WBBSupport"
+                text="sᴜᴘᴘᴏʀᴛ", url="http://t.me/telugucoders"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="Add Me To Your Group 🎉",
+                text=" • ᴀᴅᴅ ᴍᴇ•",
                 url=f"http://t.me/{BOT_USERNAME}?startgroup=new",
             )
         ],
@@ -146,20 +146,16 @@ keyboard = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                text="Help ❓",
+                text="ʜᴇʟᴘ",
                 url=f"t.me/{BOT_USERNAME}?start=help",
-            ),
-            InlineKeyboardButton(
-                text="Repo 🛠",
-                url="https://github.com/thehamkercat/WilliamButcherBot",
             ),
         ],
         [
             InlineKeyboardButton(
-                text="System Stats 💻",
+                text="sʏsᴛᴇᴍ sᴛᴀᴛs",
                 callback_data="stats_callback",
             ),
-            InlineKeyboardButton(text="Support 👨", url="t.me/WBBSupport"),
+            InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url="t.me/telugucoders"),
         ],
     ]
 )
@@ -208,7 +204,7 @@ async def help_command(_, message):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Click here",
+                                text="ᴄʟɪᴄᴋ ᴍᴇ",
                                 url=f"t.me/{BOT_USERNAME}?start=help_{name}",
                             )
                         ],
@@ -297,14 +293,14 @@ async def help_button(client, query):
     back_match = re.match(r"help_back", query.data)
     create_match = re.match(r"help_create", query.data)
     top_text = f"""
-Hello {query.from_user.first_name}, My name is {BOT_NAME}.
-I'm a group management bot with some usefule features.
-You can choose an option below, by clicking a button.
-Also you can ask anything in Support Group.
+ʜᴇʟʟᴏ {query.from_user.first_name}, ᴍʏ ɴᴀᴍᴇ ɪs {BOT_NAME}.
+ɪᴍ ᴀ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴜsᴇғᴜʟᴇ ғᴇᴀᴛᴜʀᴇs.
+ʏᴏᴜ ᴄᴀɴ ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴘᴛɪᴏɴ ʙᴇʟᴏᴡ, ʙʏ ᴄʟɪᴄᴋɪɴɢ a ʙᴜᴛᴛᴏɴ.
+ᴀʟsᴏ ʏᴏᴜ ᴄᴀɴ ᴀsᴋ ᴀɴʏᴛʜɪɴɢ ɪɴ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ.
 
-General command are:
- - /start: Start the bot
- - /help: Give this message
+ɴᴏʀᴍᴀʟ ᴄᴏᴍᴍᴀɴᴅs ᴀʀᴇ:
+ - /start: sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ
+ - /help: ɢɪᴠᴇ ᴛʜɪs ᴍᴇssᴀɢᴇ
  """
     if mod_match:
         module = (mod_match.group(1)).replace(" ", "_")
