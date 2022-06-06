@@ -139,14 +139,10 @@ home_keyboard_pm = InlineKeyboardMarkup(
 home_text_pm = (
         f"Hey there! My name is {BOT_NAME}. I can manage your "
         + "┏━━━━━━━━━━━━━━━━━┓
-
            ┣» ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ. 
-
            ┣» ʜɪɢʜ ǫᴜᴀʟɪᴛʏ ᴍᴜꜱɪᴄ.
-
            ┣» ᴍᴀᴅᴇ ʙʏ ᴛᴇʟᴜɢᴜ ᴛᴇᴀᴍ. 
-
-           ┗━━━━━━━━━━━━━━━━━┛"
+           ┗━━━━━━━━━━━━━━━━━┛."
 )
 
 keyboard = InlineKeyboardMarkup(
