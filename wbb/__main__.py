@@ -129,7 +129,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
         ],
         [
             InlineKeyboardButton(
-                text=" • ᴀᴅᴅ ᴍᴇ•",
+                text=" • ᴀᴅᴅ ᴍᴇ •",
                 url=f"http://t.me/{BOT_USERNAME}?startgroup=new",
             )
         ],
@@ -138,8 +138,15 @@ home_keyboard_pm = InlineKeyboardMarkup(
 
 home_text_pm = (
         f"Hey there! My name is {BOT_NAME}. I can manage your "
-        + "group with lots of useful features, feel free to "
-        + "add me to your group."
+        + "┏━━━━━━━━━━━━━━━━━┓
+
+           ┣» ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ. 
+
+           ┣» ʜɪɢʜ ǫᴜᴀʟɪᴛʏ ᴍᴜꜱɪᴄ.
+
+           ┣» ᴍᴀᴅᴇ ʙʏ ᴛᴇʟᴜɢᴜ ᴛᴇᴀᴍ. 
+
+           ┗━━━━━━━━━━━━━━━━━┛"
 )
 
 keyboard = InlineKeyboardMarkup(
