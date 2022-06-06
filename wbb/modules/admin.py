@@ -50,32 +50,34 @@ from wbb.utils.functions import (
     time_converter,
 )
 
-__MODULE__ = "Admin"
-__HELP__ = """/ban - Ban A User
-/dban - Delete the replied message banning its sender
-/tban - Ban A User For Specific Time
-/unban - Unban A User
-/listban - Ban a user from groups listed in a message
-/listunban - Unban a user from groups listed in a message
-/warn - Warn A User
-/dwarn - Delete the replied message warning its sender
-/rmwarns - Remove All Warning of A User
-/warns - Show Warning Of A User
-/kick - Kick A User
-/dkick - Delete the replied message kicking its sender
-/purge - Purge Messages
-/purge [n] - Purge "n" number of messages from replied message
-/del - Delete Replied Message
-/promote - Promote A Member
-/fullpromote - Promote A Member With All Rights
-/demote - Demote A Member
-/pin - Pin A Message
-/mute - Mute A User
-/tmute - Mute A User For Specific Time
-/unmute - Unmute A User
-/ban_ghosts - Ban Deleted Accounts
-/report | @admins | @admin - Report A Message To Admins.
-/admincache - Reload admin list"""
+__MODULE__ = "ᴀᴅᴍɪɴ"
+__HELP__ = """/ban - ʙᴀɴ ᴀ ᴜsᴇʀ
+➠ /dban - ᴅᴇʟᴇᴛᴇ ᴛʜᴇ ʀᴇᴘʟɪᴇᴅ ᴍᴇssᴀɢᴇ ʙᴀɴɴɪɴɢ ɪᴛs sᴇɴᴅᴇʀ
+➠ /tban - ʙᴀɴ ᴀ ᴜsᴇʀ ғᴏʀ sᴘᴇᴄɪғɪᴄ ᴛɪᴍᴇ
+➠ /unban - ᴜɴʙᴀɴ ᴀ ᴜsᴇʀ
+➠ /listban - ʙᴀɴ ᴀ ᴜsᴇʀ ғʀᴏᴍ ɢʀᴏᴜᴘs ʟɪsᴛᴇᴅ ɪɴ ᴀ ᴍᴇssᴀɢᴇ
+➠ /listunban - ᴜɴʙᴀɴ ᴀ ᴜsᴇʀ ғʀᴏᴍ ɢʀᴏᴜᴘs ʟɪsᴛᴇᴅ ɪɴ ᴀ ᴍᴇssᴀɢᴇ
+➠ /warn - ᴡᴀʀɴ ᴀ ᴜsᴇʀ
+➠ /dwarn - ᴅᴇʟᴇᴛᴇ ᴛʜᴇ ʀᴇᴘʟɪᴇᴅ ᴍᴇssᴀɢᴇ ᴡᴀʀɴɪɴɢ ɪᴛs sᴇɴᴅᴇʀ
+➠ /rmwarns - ʀᴇᴍᴏᴠᴇ ᴀʟʟ ᴡᴀʀɴɪɴɢ ᴏғ ᴀ ᴜsᴇʀ
+➠ /warns - sʜᴏᴡ ᴡᴀʀɴɪɴɢ ᴏғ ᴀ ᴜsᴇʀ
+➠ /kick - ᴋɪᴄᴋ ᴀ ᴜsᴇʀ
+➠ /dkick - ᴅᴇʟᴇᴛᴇ ᴛʜᴇ ʀᴇᴘʟɪᴇᴅ ᴍᴇssᴀɢᴇ ᴋɪᴄᴋɪɴɢ ɪᴛs sᴇɴᴅᴇʀ
+➠ /purge - ᴘᴜʀɢᴇ ᴍᴇssᴀɢᴇs
+➠ /purge [n] - ᴘᴜʀɢᴇ "n" ɴᴜᴍʙᴇʀ ᴏғ ᴍᴇssᴀɢᴇs ғʀᴏᴍ ʀᴇᴘʟɪᴇᴅ ᴍᴇssᴀɢᴇ
+➠ /del - ᴅᴇʟᴇᴛᴇ ʀᴇᴘʟɪᴇᴅ ᴍᴇssᴀɢᴇ
+➠ /promote - ᴘʀᴏᴍᴏᴛᴇ ᴀ ᴍᴇᴍʙᴇʀ
+➠ /fullpromote - ᴘʀᴏᴍᴏᴛᴇ ᴀ ᴍᴇᴍʙᴇʀ ᴡɪᴛʜ ᴀʟʟ ʀɪɢʜᴛs
+➠ /demote - ᴅᴇᴍᴏᴛᴇ ᴀ ᴍᴇᴍʙᴇʀ
+➠ /pin - ᴘɪɴ ᴀ ᴍᴇssᴀɢᴇ
+➠ /mute - ᴍᴜᴛᴇ ᴀ ᴜsᴇʀ
+➠ /tmute - ᴍᴜᴛᴇ ᴀ ᴜsᴇʀ ғᴏʀ sᴘᴇᴄɪғɪᴄ ᴛɪᴍᴇ
+➠ /unmute - ᴜɴᴍᴜᴛᴇ ᴀ ᴜsᴇʀ
+➠ /ban_ghosts - ʙᴀɴ ᴅᴇʟᴇᴛᴇᴅ ᴀᴄᴄᴏᴜɴᴛs
+➠ /report | @admins | @admin - ʀᴇᴘᴏʀᴛ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ᴀᴅᴍɪɴs.
+➠ /admincache - ʀᴇʟᴏᴀᴅ ᴀᴅᴍɪɴ ʟɪsᴛ
+
+➠ ᴅᴇᴠᴇʟᴏᴘ ᴀɴᴅ ᴅᴇsɪɢɴᴇᴅ ʙʏ [ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs](https://t.me/telugucoders)"""
 
 
 async def member_permissions(chat_id: int, user_id: int):
