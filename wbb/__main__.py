@@ -137,12 +137,12 @@ home_keyboard_pm = InlineKeyboardMarkup(
 )
 
 home_text_pm = (
-        f"Hey there! My name is {BOT_NAME}. I can manage your "
-        + "┏━━━━━━━━━━━━━━━━━┓
-           ┣» ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ. 
-           ┣» ʜɪɢʜ ǫᴜᴀʟɪᴛʏ ᴍᴜꜱɪᴄ.
-           ┣» ᴍᴀᴅᴇ ʙʏ ᴛᴇʟᴜɢᴜ ᴛᴇᴀᴍ. 
-           ┗━━━━━━━━━━━━━━━━━┛."
+        f"ʜᴇʏ ᴛʜᴇʀᴇ! ɪᴍ ᴀ  {BOT_NAME}. ᴛʜᴇᴇᴍᴇᴅ ɪ ᴄᴀɴ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ʟɪᴋᴇ ʀᴏsᴇ "
+          "┏━━━━━━━━━━━━━━━━━┓"
+          "┣» ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ. "
+          "┣» ʜɪɢʜ ǫᴜᴀʟɪᴛʏ ᴍᴜꜱɪᴄ."
+          "┣» ᴍᴀᴅᴇ ʙʏ ᴛᴇʟᴜɢᴜ ᴛᴇᴀᴍ."
+          "┗━━━━━━━━━━━━━━━━━┛"
 )
 
 keyboard = InlineKeyboardMarkup(
@@ -257,10 +257,11 @@ async def help_parser(name, keyboard=None):
     if not keyboard:
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
     return (
-        """Hello {first_name}, My name is {bot_name}.
-I'm a group management bot with some useful features.
-You can choose an option below, by clicking a button.
-Also you can ask anything in Support Group.
+        """ʜᴇʟʟᴏ {first_name}, ᴍʏ ɴᴀᴍᴇ ɪs {bot_name}.
+ɪᴍ ᴀ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.
+ʏᴏᴜ ᴄᴀɴ ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴘᴛɪᴏɴ ʙᴇʟᴏᴡ, ʙʏ ᴄʟɪᴄᴋɪɴɢ ᴀ ʙᴜᴛᴛᴏɴ.
+ᴀʟsᴏ ʏᴏᴜ ᴄᴀɴ ᴀsᴋ ᴀɴʏᴛʜɪɴɢ ɪɴ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ.
+➠ ᴅᴇᴠᴇʟᴏᴘᴇᴅ ᴀɴᴅ ᴅᴇsɪɢɴᴇᴅ ʙʏ [ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs](https://t.me/telugucoders)
 """.format(
             first_name=name,
             bot_name=BOT_NAME,
@@ -304,7 +305,7 @@ async def help_button(client, query):
 ɴᴏʀᴍᴀʟ ᴄᴏᴍᴍᴀɴᴅs ᴀʀᴇ:
  - /start: sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ
  - /help: ɢɪᴠᴇ ᴛʜɪs ᴍᴇssᴀɢᴇ
- """
+ ➠ ᴅᴇᴠᴇʟᴏᴘᴇᴅ ᴀɴᴅ ᴅᴇsɪɢɴᴇᴅ ʙʏ [ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs](https://t.me/telugucoders)"""
     if mod_match:
         module = (mod_match.group(1)).replace(" ", "_")
         text = (
