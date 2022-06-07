@@ -11,11 +11,13 @@ from wbb.utils.dbfunctions import (
     is_antiservice_on,
 )
 
-__MODULE__ = "AntiService"
+__MODULE__ = "ᴀɴᴛɪ sᴇʀᴠɪᴄᴇ"
 __HELP__ = """
-Plugin to delete service messages in a chat!
+➠ ᴘʟᴜɢɪɴ ᴛᴏ ᴅᴇʟᴇᴛᴇ sᴇʀᴠɪᴄᴇ ᴍᴇssᴀɢᴇs ɪɴ ᴀ ᴄʜᴀᴛ!
 
-/antiservice [enable|disable]
+➠ /antiservice [ᴇɴᴀʙʟᴇ|ᴅɪsᴀʙʟᴇ]
+
+➠ ᴅᴇᴠᴇʟᴏᴘ ᴀɴᴅ ᴅᴇsɪɢɴᴇᴅ ʙʏ [ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs](https://t.me/telugucoders)
 """
 
 
@@ -28,7 +30,7 @@ Plugin to delete service messages in a chat!
 async def anti_service(_, message):
     if len(message.command) != 2:
         return await message.reply_text(
-            "Usage: /antiservice [enable | disable]"
+            "ᴜsᴀɢᴇ: /antiservice [ᴇɴᴀʙʟᴇ | ᴅɪsᴀʙʟᴇ]"
         )
     status = message.text.split(None, 1)[1].strip()
     status = status.lower()
@@ -36,16 +38,16 @@ async def anti_service(_, message):
     if status == "enable":
         await antiservice_on(chat_id)
         await message.reply_text(
-            "Enabled AntiService System. I will Delete Service Messages from Now on."
+            "ᴇɴᴀʙʟᴇᴅ ᴀɴᴛɪsᴇʀᴠɪᴄᴇ sʏsᴛᴇᴍ. ɪ ᴡɪʟʟ ᴅᴇʟᴇᴛᴇ sᴇʀᴠɪᴄᴇ ᴍᴇssᴀɢᴇs ғʀᴏᴍ ɴᴏᴡ ᴏɴ."
         )
     elif status == "disable":
         await antiservice_off(chat_id)
         await message.reply_text(
-            "Disabled AntiService System. I won't Be Deleting Service Message from Now on."
+            "ᴅɪsᴀʙʟᴇᴅ ᴀɴᴛɪsᴇʀᴠɪᴄᴇ sʏsᴛᴇᴍ. ɪ ᴡᴏɴ'ᴛ ʙᴇ ᴅᴇʟᴇᴛɪɴɢ sᴇʀᴠɪᴄᴇ ᴍᴇssᴀɢᴇ ғʀᴏᴍ ɴᴏᴡ ᴏɴ."
         )
     else:
         await message.reply_text(
-            "Unknown Suffix, Use /antiservice [enable|disable]"
+            "ᴜɴᴋɴᴏᴡɴ sᴜғғɪx, ᴜsᴇ /antiservice [ᴇɴᴀʙʟᴇ|ᴅɪsᴀʙʟᴇ]"
         )
 
 
