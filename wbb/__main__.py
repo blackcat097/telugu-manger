@@ -164,7 +164,7 @@ keyboard = InlineKeyboardMarkup(
 async def start(_, message):
     if message.chat.type != "private":
         return await message.reply(
-            "Pm Me For More Details.", reply_markup=keyboard
+            "ᴘᴍ ᴍᴇ ғᴏʀ ᴍᴏʀᴇ ᴅᴇᴛᴀɪʟs.", reply_markup=keyboard
         )
     if len(message.text.split()) > 1:
         name = (message.text.split(None, 1)[1]).lower()
@@ -175,7 +175,7 @@ async def start(_, message):
         elif "_" in name:
             module = name.split("_", 1)[1]
             text = (
-                    f"Here is the help for **{HELPABLE[module].__MODULE__}**:\n"
+                    f"ʜᴇʀᴇ ɪs ᴛʜᴇ ʜᴇʟᴘ ғᴏʀ **{HELPABLE[module].__MODULE__}**:\n"
                     + HELPABLE[module].__HELP__
             )
             await message.reply(text, disable_web_page_preview=True)
@@ -210,23 +210,23 @@ async def help_command(_, message):
                     ]
                 )
                 await message.reply(
-                    f"Click on the below button to get help about {name}",
+                    f"ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʜᴇʟᴘ ᴀʙᴏᴜᴛ {name}",
                     reply_markup=key,
                 )
             else:
                 await message.reply(
-                    "PM Me For More Details.", reply_markup=keyboard
+                    "ᴘᴍ ᴍᴇ ғᴏʀ ᴍᴏʀᴇ ᴅᴇᴛᴀɪʟs.", reply_markup=keyboard
                 )
         else:
             await message.reply(
-                "Pm Me For More Details.", reply_markup=keyboard
+                "ᴘᴍ ᴍᴇ ғᴏʀ ᴍᴏʀᴇ ᴅᴇᴛᴀɪʟs.", reply_markup=keyboard
             )
     else:
         if len(message.command) >= 2:
             name = (message.text.split(None, 1)[1]).replace(" ", "_").lower()
             if str(name) in HELPABLE:
                 text = (
-                        f"Here is the help for **{HELPABLE[name].__MODULE__}**:\n"
+                        f"ʜᴇʀᴇ ɪs ᴛʜᴇ ʜᴇʟᴘ ғᴏʀ **{HELPABLE[name].__MODULE__}**:\n"
                         + HELPABLE[name].__HELP__
                 )
                 await message.reply(text, disable_web_page_preview=True)
@@ -314,7 +314,7 @@ async def help_button(client, query):
         await query.message.edit(
             text=text,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("back", callback_data="help_back")]]
+                [[InlineKeyboardButton("◁", callback_data="help_back")]]
             ),
             disable_web_page_preview=True,
         )
