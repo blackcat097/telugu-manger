@@ -146,7 +146,7 @@ async def admin_cache_func(_, cmu: ChatMemberUpdated):
                 )
             ],
         }
-        log.info(f"Updated admin cache for {cmu.chat.id} [{cmu.chat.title}]")
+        log.info(f"ᴜᴘᴅᴀᴛᴇᴅ ᴀᴅᴍɪɴ ᴄᴀᴄʜᴇ ғᴏʀ {cmu.chat.id} [{cmu.chat.title}]")
 
 
 # Purge Messages
@@ -159,7 +159,7 @@ async def purgeFunc(_, message: Message):
     await message.delete()
 
     if not repliedmsg:
-        return await message.reply_text("Reply to a message to purge from.")
+        return await message.reply_text("😏 ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ᴘᴜʀɢᴇ ғʀᴏᴍ.")
 
     cmd = message.command
     if len(cmd) > 1 and cmd[1].isdigit():
@@ -208,22 +208,23 @@ async def purgeFunc(_, message: Message):
 async def kickFunc(_, message: Message):
     user_id, reason = await extract_user_and_reason(message)
     if not user_id:
-        return await message.reply_text("I can't find that user.")
+        return await message.reply_text("🤔 ɪ ᴄᴀɴ'ᴛ ғɪɴᴅ ᴛʜᴀᴛ ᴜsᴇʀ.")
     if user_id == BOT_ID:
         return await message.reply_text(
-            "I can't kick myself, i can leave if you want."
+            "😒 ɪ ᴄᴀɴ'ᴛ ᴋɪᴄᴋ ᴍʏsᴇʟғ, ɪ ᴄᴀɴ ʟᴇᴀᴠᴇ ɪғ ʏᴏᴜ ᴡᴀɴᴛ."
         )
     if user_id in SUDOERS:
-        return await message.reply_text("You Wanna Kick The Elevated One?")
+        return await message.reply_text("ʏᴏᴜ ᴡᴀɴɴᴀ ᴋɪᴄᴋ ᴛʜᴇ ᴇʟᴇᴠᴀᴛᴇᴅ ᴏɴᴇ?")
     if user_id in (await list_admins(message.chat.id)):
         return await message.reply_text(
-            "I can't kick an admin, You know the rules, so do i."
+            "ɪ ᴄᴀɴ'ᴛ ᴋɪᴄᴋ ᴀɴ ᴀᴅᴍɪɴ, ʏᴏᴜ ᴋɴᴏᴡ ᴛʜᴇ ʀᴜʟᴇs, sᴏ ᴅᴏ ɪ."
         )
     mention = (await app.get_users(user_id)).mention
     msg = f"""
-**Kicked User:** {mention}
-**Kicked By:** {message.from_user.mention if message.from_user else 'Anon'}
-**Reason:** {reason or 'No Reason Provided.'}"""
+**ᴋɪᴄᴋᴇᴅ ᴜsᴇr:** {mention}
+**ᴋɪᴄᴋᴇᴅ ʙʏ:** {message.from_user.mention if message.from_user else 'Anon'}
+**ʀᴇᴀsᴏɴ:** {reason or 'No Reason Provided.'}
+**ᴅᴇsɪɢɴᴇᴅ ʙʏ:** [ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs](https://t.me/tgshadow_fighters)"""
     if message.command[0][0] == "d":
         await message.reply_to_message.delete()
     await message.chat.ban_member(user_id)
@@ -245,18 +246,18 @@ async def banFunc(_, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
 
     if not user_id:
-        return await message.reply_text("I can't find that user.")
+        return await message.reply_text("🙂 ɪ ᴄᴀɴ'ᴛ ғɪɴᴅ ᴛʜᴀᴛ ᴜsᴇʀ.")
     if user_id == BOT_ID:
         return await message.reply_text(
-            "I can't ban myself, i can leave if you want."
+            "ɪ ᴄᴀɴ'ᴛ ʙᴀɴ ᴍʏsᴇʟғ, ɪ ᴄᴀɴ ʟᴇᴀᴠᴇ ɪғ ʏᴏᴜ ᴡᴀɴᴛ."
         )
     if user_id in SUDOERS:
         return await message.reply_text(
-            "You Wanna Ban The Elevated One?, RECONSIDER!"
+            "ʏᴏᴜ ᴡᴀɴɴᴀ ʙᴀɴ ᴛʜᴇ ᴇʟᴇᴠᴀᴛᴇᴅ ᴏɴᴇ?, ʀᴇᴄᴏɴsɪᴅᴇʀ!"
         )
     if user_id in (await list_admins(message.chat.id)):
         return await message.reply_text(
-            "I can't ban an admin, You know the rules, so do i."
+            "ɪ ᴄᴀɴ'ᴛ ʙᴀɴ ᴀɴ ᴀᴅᴍɪɴ, ʏᴏᴜ ᴋɴᴏᴡ ᴛʜᴇ ʀᴜʟᴇs, sᴏ ᴅᴏ ɪ."
         )
 
     try:
@@ -269,8 +270,8 @@ async def banFunc(_, message: Message):
         )
 
     msg = (
-        f"**Banned User:** {mention}\n"
-        f"**Banned By:** {message.from_user.mention if message.from_user else 'Anon'}\n"
+        f"**ʙᴀɴɴᴇᴅ ᴜsᴇʀ:** {mention}\n"
+        f"**ʙᴀɴɴᴇᴅ ʙʏ:** {message.from_user.mention if message.from_user else 'Anon'}\n"
     )
     if message.command[0][0] == "d":
         await message.reply_to_message.delete()
@@ -279,9 +280,9 @@ async def banFunc(_, message: Message):
         time_value = split[0]
         temp_reason = split[1] if len(split) > 1 else ""
         temp_ban = await time_converter(message, time_value)
-        msg += f"**Banned For:** {time_value}\n"
+        msg += f"**ʙᴀɴɴᴇᴅ ғᴏʀ:** {time_value}\n"
         if temp_reason:
-            msg += f"**Reason:** {temp_reason}"
+            msg += f"**ʀᴇᴀsᴏɴ:** {temp_reason}"
         try:
             if len(time_value[:-1]) < 3:
                 await message.chat.ban_member(user_id, until_date=temp_ban)
@@ -292,7 +293,7 @@ async def banFunc(_, message: Message):
             pass
         return
     if reason:
-        msg += f"**Reason:** {reason}"
+        msg += f"**ʀᴇᴀsᴏɴ:** {reason}"
     await message.chat.ban_member(user_id)
     await message.reply_text(msg)
 
@@ -310,7 +311,7 @@ async def unban_func(_, message: Message):
     reply = message.reply_to_message
 
     if reply and reply.sender_chat and reply.sender_chat != message.chat.id:
-        return await message.reply_text("You cannot unban a channel")
+        return await message.reply_text("ʏᴏᴜ ᴄᴀɴɴᴏᴛ ᴜɴʙᴀɴ ᴀ ᴄʜᴀɴɴᴇʟ")
 
     if len(message.command) == 2:
         user = message.text.split(None, 1)[1]
@@ -318,11 +319,11 @@ async def unban_func(_, message: Message):
         user = message.reply_to_message.from_user.id
     else:
         return await message.reply_text(
-            "Provide a username or reply to a user's message to unban."
+            "ᴘʀᴏᴠɪᴅᴇ ᴀ ᴜsᴇʀɴᴀᴍᴇ ᴏʀ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜsᴇʀ's ᴍᴇssᴀɢᴇ ᴛᴏ ᴜɴʙᴀɴ."
         )
     await message.chat.unban_member(user)
     umention = (await app.get_users(user)).mention
-    await message.reply_text(f"Unbanned! {umention}")
+    await message.reply_text(f"ᴜɴʙᴀɴɴᴇᴅ! {umention}")
 
 
 # Ban users listed in a message
@@ -335,13 +336,13 @@ async def list_ban_(c, message: Message):
     userid, msglink_reason = await extract_user_and_reason(message)
     if not userid or not msglink_reason:
         return await message.reply_text(
-            "Provide a userid/username along with message link and reason to list-ban"
+            "ᴘʀᴏᴠɪᴅᴇ ᴀ ᴜsᴇʀɪᴅ/ᴜsᴇʀɴᴀᴍᴇ ᴀʟᴏɴɢ ᴡɪᴛʜ ᴍᴇssᴀɢᴇ ʟɪɴᴋ ᴀɴᴅ ʀᴇᴀsᴏɴ ᴛᴏ ʟɪsᴛ-ʙᴀɴ"
         )
     if (
         len(msglink_reason.split(" ")) == 1
     ):  # message link included with the reason
         return await message.reply_text(
-            "You must provide a reason to list-ban"
+            "ʏᴏᴜ ᴍᴜsᴛ ᴘʀᴏᴠɪᴅᴇ ᴀ ʀᴇᴀsᴏɴ ᴛᴏ ʟɪsᴛ-ʙᴀɴ"
         )
     # seperate messge link from reason
     lreason = msglink_reason.split()
@@ -350,25 +351,25 @@ async def list_ban_(c, message: Message):
     if not re.search(
         r"(https?://)?t(elegram)?\.me/\w+/\d+", messagelink
     ):  # validate link
-        return await message.reply_text("Invalid message link provided")
+        return await message.reply_text("ɪɴᴠᴀʟɪᴅ ᴍᴇssᴀɢᴇ ʟɪɴᴋ ᴘʀᴏᴠɪᴅᴇᴅ")
 
     if userid == BOT_ID:
-        return await message.reply_text("I can't ban myself.")
+        return await message.reply_text("ɪ ᴄᴀɴ'ᴛ ʙᴀɴ ᴍʏsᴇʟғ.")
     if userid in SUDOERS:
         return await message.reply_text(
-            "You Wanna Ban The Elevated One?, RECONSIDER!"
+            "ʏᴏᴜ ᴡᴀɴɴᴀ ʙᴀɴ ᴛʜᴇ ᴇʟᴇᴠᴀᴛᴇᴅ ᴏɴᴇ?, ʀᴇᴄᴏɴsɪᴅᴇʀ!"
         )
     splitted = messagelink.split("/")
     uname, mid = splitted[-2], int(splitted[-1])
     m = await message.reply_text(
-        "`Banning User from multiple groups. \
-         This may take some time`"
+        "`ʙᴀɴɴɪɴɢ ᴜsᴇʀ ғʀᴏᴍ ᴍᴜʟᴛɪᴘʟᴇ ɢʀᴏᴜᴘs. \
+         ᴛʜɪs ᴍᴀʏ ᴛᴀᴋᴇ sᴏᴍᴇ ᴛɪᴍᴇ`"
     )
     try:
         msgtext = (await app.get_messages(uname, mid)).text
         gusernames = re.findall("@\w+", msgtext)
     except:
-        return await m.edit_text("Could not get group usernames")
+        return await m.edit_text("ᴄᴏᴜʟᴅ ɴᴏᴛ ɢᴇᴛ ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇs")
     count = 0
     for username in gusernames:
         try:
@@ -382,11 +383,12 @@ async def list_ban_(c, message: Message):
     mention = (await app.get_users(userid)).mention
 
     msg = f"""
-**List-Banned User:** {mention}
-**Banned User ID:** `{userid}`
-**Admin:** {message.from_user.mention}
-**Affected chats:** `{count}`
-**Reason:** {reason}
+**ʟɪsᴛ-ʙᴀɴɴᴇᴅ ᴜsᴇʀ:** {mention}
+**ʙᴀɴɴᴇᴅ ᴜsᴇʀ ɪᴅ:** `{userid}`
+**ᴀᴅᴍɪɴ:** {message.from_user.mention}
+**ᴀғғᴇᴄᴛᴇᴅ ᴄʜᴀᴛs:** `{count}`
+**ʀᴇᴀsᴏɴ:** {reason}
+**ᴅᴇsɪɢɴᴇᴅ ʙʏ:** [ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs](https://t.me/tgshadow_fighters) 
 """
     await m.edit_text(msg)
 
@@ -401,25 +403,25 @@ async def list_unban_(c, message: Message):
     userid, msglink = await extract_user_and_reason(message)
     if not userid or not msglink:
         return await message.reply_text(
-            "Provide a userid/username along with message link to list-unban"
+            "ᴘʀᴏᴠɪᴅᴇ ᴀ ᴜsᴇʀɪᴅ/ᴜsᴇʀɴᴀᴍᴇ ᴀʟᴏɴɢ ᴡɪᴛʜ ᴍᴇssᴀɢᴇ ʟɪɴᴋ ᴛᴏ ʟɪsᴛ-ᴜɴʙᴀɴ"
         )
 
     if not re.search(
         r"(https?://)?t(elegram)?\.me/\w+/\d+", msglink
     ):  # validate link
-        return await message.reply_text("Invalid message link provided")
+        return await message.reply_text("ɪɴᴠᴀʟɪᴅ ᴍᴇssᴀɢᴇ ʟɪɴᴋ ᴘʀᴏᴠɪᴅᴇᴅ")
 
     splitted = msglink.split("/")
     uname, mid = splitted[-2], int(splitted[-1])
     m = await message.reply_text(
-        "`Unbanning User from multiple groups. \
-         This may take some time`"
+        "`ᴜɴʙᴀɴɴɪɴɢ ᴜsᴇʀ ғʀᴏᴍ ᴍᴜʟᴛɪᴘʟᴇ ɢʀᴏᴜᴘs. \
+         ᴛʜɪs ᴍᴀʏ ᴛᴀᴋᴇ sᴏᴍᴇ ᴛɪᴍᴇ`"
     )
     try:
         msgtext = (await app.get_messages(uname, mid)).text
         gusernames = re.findall("@\w+", msgtext)
     except:
-        return await m.edit_text("Could not get the group usernames")
+        return await m.edit_text("ᴄᴏᴜʟᴅ ɴᴏᴛ ɢᴇᴛ ᴛʜᴇ ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇs")
     count = 0
     for username in gusernames:
         try:
@@ -432,10 +434,11 @@ async def list_unban_(c, message: Message):
         count += 1
     mention = (await app.get_users(userid)).mention
     msg = f"""
-**List-Unbanned User:** {mention}
-**Unbanned User ID:** `{userid}`
-**Admin:** {message.from_user.mention}
-**Affected chats:** `{count}`
+**ʟɪsᴛ-ᴜɴʙᴀɴɴᴇᴅ ᴜsᴇʀ:** {mention}
+**ᴜɴʙᴀɴɴᴇᴅ ᴜsᴇʀ ɪᴅ:** `{userid}`
+**ᴀᴅᴍɪɴ:** {message.from_user.mention}
+**ᴀғғᴇᴄᴛᴇᴅ ᴄʜᴀᴛs:** `{count}`
+**ᴅᴇsɪɢɴᴇᴅ ʙʏ:** [ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs](https://t.me/tgshadow_fighters) 
 """
     await m.edit_text(msg)
 
@@ -447,7 +450,7 @@ async def list_unban_(c, message: Message):
 @adminsOnly("can_delete_messages")
 async def deleteFunc(_, message: Message):
     if not message.reply_to_message:
-        return await message.reply_text("Reply To A Message To Delete It")
+        return await message.reply_text("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ᴅᴇʟᴇᴛᴇ ɪᴛ")
     await message.reply_to_message.delete()
     await message.delete()
 
@@ -460,17 +463,17 @@ async def deleteFunc(_, message: Message):
     & ~filters.edited
     & ~filters.private
 )
-@adminsOnly("can_promote_members")
+@adminsOnly("ᴄᴀɴ_ᴘʀᴏᴍᴏᴛᴇ_ᴍᴇᴍʙᴇʀs")
 async def promoteFunc(_, message: Message):
     user_id = await extract_user(message)
     umention = (await app.get_users(user_id)).mention
     if not user_id:
-        return await message.reply_text("I can't find that user.")
+        return await message.reply_text("ɪ ᴄᴀɴ'ᴛ ғɪɴᴅ ᴛʜᴀᴛ ᴜsᴇʀ.")
     bot = await app.get_chat_member(message.chat.id, BOT_ID)
     if user_id == BOT_ID:
-        return await message.reply_text("I can't promote myself.")
+        return await message.reply_text("ɪ ᴄᴀɴ'ᴛ ᴘʀᴏᴍᴏᴛᴇ ᴍʏsᴇʟғ.")
     if not bot.can_promote_members:
-        return await message.reply_text("I don't have enough permissions")
+        return await message.reply_text("ɪ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴇɴᴏᴜɢʜ ᴘᴇʀᴍɪssɪᴏɴs")
     if message.command[0][0] == "f":
         await message.chat.promote_member(
             user_id=user_id,
@@ -483,7 +486,7 @@ async def promoteFunc(_, message: Message):
             can_manage_chat=bot.can_manage_chat,
             can_manage_voice_chats=bot.can_manage_voice_chats,
         )
-        return await message.reply_text(f"Fully Promoted! {umention}")
+        return await message.reply_text(f"ғᴜʟʟʏ ᴘʀᴏᴍᴏᴛᴇᴅ! {umention}")
 
     await message.chat.promote_member(
         user_id=user_id,
@@ -496,7 +499,7 @@ async def promoteFunc(_, message: Message):
         can_manage_chat=bot.can_manage_chat,
         can_manage_voice_chats=bot.can_manage_voice_chats,
     )
-    await message.reply_text(f"Promoted! {umention}")
+    await message.reply_text(f"ᴘʀᴏᴍᴏᴛᴇᴅ! {umention}")
 
 
 # Demote Member
@@ -507,12 +510,12 @@ async def promoteFunc(_, message: Message):
 async def demote(_, message: Message):
     user_id = await extract_user(message)
     if not user_id:
-        return await message.reply_text("I can't find that user.")
+        return await message.reply_text("ɪ ᴄᴀɴ'ᴛ ғɪɴᴅ ᴛʜᴀᴛ ᴜsᴇʀ.")
     if user_id == BOT_ID:
-        return await message.reply_text("I can't demote myself.")
+        return await message.reply_text("ɪ ᴄᴀɴ'ᴛ ᴅᴇᴍᴏᴛᴇ ᴍʏsᴇʟғ.")
     if user_id in SUDOERS:
         return await message.reply_text(
-            "You wanna demote the elevated one?, RECONSIDER!"
+            "ʏᴏᴜ ᴡᴀɴɴᴀ ᴅᴇᴍᴏᴛᴇ ᴛʜᴇ ᴇʟᴇᴠᴀᴛᴇᴅ ᴏɴᴇ?, ʀᴇᴄᴏɴsɪᴅᴇʀ!"
         )
     await message.chat.promote_member(
         user_id=user_id,
@@ -526,7 +529,7 @@ async def demote(_, message: Message):
         can_manage_voice_chats=False,
     )
     umention = (await app.get_users(user_id)).mention
-    await message.reply_text(f"Demoted! {umention}")
+    await message.reply_text(f"ᴅᴇᴍᴏᴛᴇᴅ! {umention}")
 
 
 # Pin Messages
