@@ -120,21 +120,21 @@ async def alive_function(answers):
     bot_state = "Dead" if not await app.get_me() else "Alive"
     ubot_state = "Dead" if not await app2.get_me() else "Alive"
     buttons.add(
-        InlineKeyboardButton("Stats", callback_data="stats_callback"),
+        InlineKeyboardButton("sᴛᴀᴛs", callback_data="stats_callback"),
         InlineKeyboardButton(
-            "Go Inline!", switch_inline_query_current_chat=""
+            "ɢᴏ ɪɴʟɪɴᴇ!", switch_inline_query_current_chat=""
         ),
-    )
+    )    
 
     msg = f"""
-**[William✨](https://github.com/thehamkercat/WilliamButcherBot):**
-**MainBot:** `{bot_state}`
-**UserBot:** `{ubot_state}`
-**Python:** `{pyver.split()[0]}`
-**Pyrogram:** `{pyrover}`
-**MongoDB:** `{mongover}`
-**Platform:** `{sys.platform}`
-**Profiles:** [BOT](t.me/{BOT_USERNAME}) | [UBOT](t.me/{USERBOT_USERNAME})
+**[ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs](https://github.com/blackcat097/telugu-manger):**
+**ᴍᴀɪɴʙᴏᴛ:** `{bot_state}`
+**ᴜsᴇʀʙᴏᴛ:** `{ubot_state}`
+**ᴘʏᴛʜᴏɴ:** `{pyver.split()[0]}`
+**ᴘʏʀᴏɢʀᴀᴍ:** `{pyrover}`
+**ᴍᴏɴɢᴏᴅʙ:** `{mongover}`
+**ᴘʟᴀᴛғᴏʀᴍ:** `{sys.platform}`
+**ᴘʀᴏғɪʟᴇs:** [BOT](t.me/{BOT_USERNAME}) | [UBOT](t.me/{USERBOT_USERNAME})
 """
     answers.append(
         InlineQueryResultArticle(
