@@ -38,11 +38,13 @@ from wbb.utils.dbfunctions import (
 )
 from wbb.utils.filter_groups import blacklist_filters_group
 
-__MODULE__ = "Blacklist"
+__MODULE__ = "ʙʟᴀᴄᴋʟɪsᴛ"
 __HELP__ = """
-/blacklisted - Get All The Blacklisted Words In The Chat.
-/blacklist [WORD|SENTENCE] - Blacklist A Word Or A Sentence.
-/whitelist [WORD|SENTENCE] - Whitelist A Word Or A Sentence.
+➠ /blacklisted - ɢᴇᴛ ᴀʟʟ ᴛʜᴇ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴡᴏʀᴅs ɪɴ ᴛʜᴇ ᴄʜᴀᴛ.
+➠ /blacklist [ᴡᴏʀᴅ|sᴇɴᴛᴇɴᴄᴇ] - ʙʟᴀᴄᴋʟɪsᴛ ᴀ ᴡᴏʀᴅ ᴏʀ ᴀ sᴇɴᴛᴇɴᴄᴇ.
+➠ /whitelist [ᴡᴏʀᴅ|sᴇɴᴛᴇɴᴄᴇ] - ᴡʜɪᴛᴇʟɪsᴛ ᴀ ᴡᴏʀᴅ ᴏʀ ᴀ sᴇɴᴛᴇɴᴄᴇ.
+
+➠ ᴅᴇᴠᴇʟᴏᴘ ᴀɴᴅ ᴅᴇsɪɢɴᴇᴅ ʙʏ [ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs](https://t.me/tgshadow_fighters) 
 """
 
 
