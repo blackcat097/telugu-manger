@@ -42,7 +42,7 @@ from wbb.utils.functions import extract_user
     filters.command("anonymize", prefixes=USERBOT_PREFIX) & SUDOERS
 )
 async def change_profile(_, message: Message):
-    m = await eor(message, text="Anonymizing...")
+    m = await eor(message, text="ᴀɴᴏɴʏᴍɪᴢɪɴɢ...")
     try:
         image_resp, name_resp = await gather(
             session.get("https://thispersondoesnotexist.com/image"),
@@ -75,9 +75,9 @@ async def impersonate(_, message: Message):
     if not user_id:
         return await eor(message, text="Can't impersonate an anonymous user.")
     if user_id == USERBOT_ID:
-        return eor(message, text="Can't impersonate myself.")
+        return eor(message, text="ᴄᴀɴ'ᴛ ɪᴍᴘᴇʀsᴏɴᴀᴛᴇ ᴍʏsᴇʟғ.")
 
-    m = await eor(message, text="Processing...")
+    m = await eor(message, text="ᴘʀᴏᴄᴇssɪɴɢ...")
 
     try:
         user: Chat = await app2.get_chat(user_id)
@@ -93,6 +93,6 @@ async def impersonate(_, message: Message):
     except Exception as e:
         e = format_exc()
         err = await app.send_message(LOG_GROUP_ID, text=f"`{e}`")
-        return await m.edit(f"**Error**: {err.link}")
+        return await m.edit(f"**ᴇʀʀᴏʀ**: {err.link}")
 
-    await m.edit(f"[Done](tg://user?id={USERBOT_ID})")
+    await m.edit(f"[ᴅᴏɴᴇ](tg://user?id={USERBOT_ID})")
