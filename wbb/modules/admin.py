@@ -701,8 +701,9 @@ async def warn_user(_, message: Message):
         msg = f"""
 **ᴡᴀʀɴᴇᴅ ᴜsᴇʀ:** {mention}
 **ᴡᴀʀɴᴇᴅ ʙʏ:** {message.from_user.mention if message.from_user else 'Anon'}
-**Reason:** {reason or 'No Reason Provided.'}
-**Warns:** {warns + 1}/3"""
+**ʀᴇᴀsᴏɴ:** {reason or 'No Reason Provided.'}
+**ᴡᴀʀɴs:** {warns + 1}/3
+**ᴅᴇsɪɢɴᴇᴅ ʙʏ:** [ᴛᴇʟᴜɢᴜ ᴄᴏᴅᴇʀs](https://t.me/tgshadow_fighters)"""
         await message.reply_text(msg, reply_markup=keyboard)
         await add_warn(chat_id, await int_to_alpha(user_id), warn)
 
@@ -715,10 +716,10 @@ async def remove_warning(_, cq: CallbackQuery):
     permission = "can_restrict_members"
     if permission not in permissions:
         return await cq.answer(
-            "You don't have enough permissions to perform this action.\n"
-            + f"Permission needed: {permission}",
+            "ʏᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴇɴᴏᴜɢʜ ᴘᴇʀᴍɪssɪᴏɴs ᴛᴏ ᴘᴇʀғᴏʀᴍ ᴛʜɪs ᴀᴄᴛɪᴏɴ.\n"
+            + f"ᴘᴇʀᴍɪssɪᴏɴ ɴᴇᴇᴅᴇᴅ: {permission}",
             show_alert=True,
-        )
+        ) 
     user_id = cq.data.split("_")[1]
     warns = await get_warn(chat_id, await int_to_alpha(user_id))
     if warns:
@@ -729,7 +730,7 @@ async def remove_warning(_, cq: CallbackQuery):
     await add_warn(chat_id, await int_to_alpha(user_id), warn)
     text = cq.message.text.markdown
     text = f"~~{text}~~\n\n"
-    text += f"__Warn removed by {from_user.mention}__"
+    text += f"__ᴡᴀʀɴ ʀᴇᴍᴏᴠᴇᴅ ʙʏ {from_user.mention}__"
     await cq.message.edit(text)
 
 
@@ -743,7 +744,7 @@ async def remove_warning(_, cq: CallbackQuery):
 async def remove_warnings(_, message: Message):
     if not message.reply_to_message:
         return await message.reply_text(
-            "Reply to a message to remove a user's warnings."
+            "ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ʀᴇᴍᴏᴠᴇ ᴀ ᴜsᴇʀ's ᴡᴀʀɴɪɴɢs."
         )
     user_id = message.reply_to_message.from_user.id
     mention = message.reply_to_message.from_user.mention
@@ -752,10 +753,10 @@ async def remove_warnings(_, message: Message):
     if warns:
         warns = warns["warns"]
     if warns == 0 or not warns:
-        await message.reply_text(f"{mention} have no warnings.")
+        await message.reply_text(f"{mention} ʜᴀᴠᴇ ɴᴏ ᴡᴀʀɴɪɴɢs.")
     else:
         await remove_warns(chat_id, await int_to_alpha(user_id))
-        await message.reply_text(f"Removed warnings of {mention}.")
+        await message.reply_text(f"ʀᴇᴍᴏᴠᴇᴅ ᴡᴀʀɴɪɴɢs ᴏғ {mention}.")
 
 
 # Warns
@@ -772,8 +773,8 @@ async def check_warns(_, message: Message):
     if warns:
         warns = warns["warns"]
     else:
-        return await message.reply_text(f"{mention} has no warnings.")
-    return await message.reply_text(f"{mention} has {warns}/3 warnings.")
+        return await message.reply_text(f"{mention} ʜᴀs ɴᴏ ᴡᴀʀɴɪɴɢs.")
+    return await message.reply_text(f"{mention} ʜᴀs {warns}/3 ᴡᴀʀɴɪɴɢs.")
 
 
 # Report
@@ -791,30 +792,30 @@ async def check_warns(_, message: Message):
 async def report_user(_, message):
     if not message.reply_to_message:
         return await message.reply_text(
-            "Reply to a message to report that user."
+            "ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ʀᴇᴘᴏʀᴛ ᴛʜᴀᴛ ᴜsᴇʀ."
         )
 
     reply = message.reply_to_message
     reply_id = reply.from_user.id if reply.from_user else reply.sender_chat.id
     user_id = message.from_user.id if message.from_user else message.sender_chat.id
     if reply_id == user_id:
-        return await message.reply_text("Why are you reporting yourself ?")
+        return await message.reply_text("ᴡʜʏ ᴀʀᴇ ʏᴏᴜ ʀᴇᴘᴏʀᴛɪɴɢ ʏᴏᴜʀsᴇʟғ ?")
 
     list_of_admins = await list_admins(message.chat.id)
     linked_chat = (await app.get_chat(message.chat.id)).linked_chat
     if linked_chat is not None:
         if reply_id in list_of_admins or reply_id == message.chat.id or reply_id == linked_chat.id:
             return await message.reply_text(
-                "Do you know that the user you are replying is an admin ?"
+                "ᴅᴏ ʏᴏᴜ ᴋɴᴏᴡ ᴛʜᴀᴛ ᴛʜᴇ ᴜsᴇʀ ʏᴏᴜ ᴀʀᴇ ʀᴇᴘʟʏɪɴɢ ɪs ᴀɴ ᴀᴅᴍɪɴ?"
             )
     else:
         if reply_id in list_of_admins or reply_id == message.chat.id:
             return await message.reply_text(
-                "Do you know that the user you are replying is an admin ?"
+                "ᴅᴏ ʏᴏᴜ ᴋɴᴏᴡ ᴛʜᴀᴛ ᴛʜᴇ ᴜsᴇʀ ʏᴏᴜ ᴀʀᴇ ʀᴇᴘʟʏɪɴɢ ɪs ᴀɴ ᴀᴅᴍɪɴ ?"
             )
 
     user_mention = reply.from_user.mention if reply.from_user else reply.sender_chat.title
-    text = f"Reported {user_mention} to admins!"
+    text = f"ʀᴇᴘᴏʀᴛᴇᴅ {user_mention} ᴛᴏ ᴀᴅᴍɪɴs!"
     admin_data = await app.get_chat_members(
         chat_id=message.chat.id, filter="administrators"
     )  # will it giv floods ?
