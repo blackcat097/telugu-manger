@@ -12,14 +12,14 @@ from wbb.utils.filter_groups import autocorrect_group
 )
 async def autocorrect_bot(_, message: Message):
     if not message.reply_to_message:
-        return await message.reply_text("Reply to a text message.")
+        return await message.reply_text("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴛᴇxᴛ ᴍᴇssᴀɢᴇ.")
     reply = message.reply_to_message
     text = reply.text or reply.caption
     if not text:
-        return await message.reply_text("Reply to a text message.")
+        return await message.reply_text("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴛᴇxᴛ ᴍᴇssᴀɢᴇ.")
     data = await arq.spellcheck(text)
     if not data.ok:
-        return await message.reply_text("Something wrong happened.")
+        return await message.reply_text("sᴏᴍᴇᴛʜɪɴɢ ᴡʀᴏɴɢ ʜᴀᴘᴘᴇɴᴇᴅ.")
     result = data.result
     await message.reply_text(result.corrected if result.corrected else "Empty")
 
